@@ -21,7 +21,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
@@ -39,7 +39,7 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
+} */
 
 
 h1,
@@ -52,11 +52,11 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
+  margin: 0 0 32px 0;
+  /* @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
-  }
+  } */
 }
 
 h2 {

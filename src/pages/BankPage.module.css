@@ -1,0 +1,13 @@
+.layout {
+    display: flex;
+    gap: 24px;
+}
+
+.sidebar {
+    flex: 0 0 280px;
+}
+
+.transactionColumn {
+    flex: 1;
+    min-width: 0;
+}
