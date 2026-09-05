@@ -1,0 +1,31 @@
+.layout {
+    display: flex;
+    gap: 24px;
+}
+
+.sidebar {
+    flex: 0 0 350px;
+}
+
+.transactionColumn {
+    flex: 1;
+    min-width: 0;
+}
+
+.balanceCard {
+    margin-bottom: 12px;
+
+    .balance {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        flex: 0 0 auto;
+        width: max-content;
+        white-space: nowrap;
+    }
+
+    .error {
+        font-weight: 600;
+        text-align: center;
+        color: red;
+    }
+}
