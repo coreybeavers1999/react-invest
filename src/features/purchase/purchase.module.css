@@ -1,0 +1,27 @@
+.selectPaymentColumn {
+    border-left: 2px solid var(--accent);
+    padding: 0 12px 0 24px;
+}
+
+.orderTotalRow {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--accent);
+
+    .label {
+        font-family: var(--font-heading);
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--muted-foreground);
+    }
+
+    .total {
+        font-family: var(--font-heading);
+        font-size: 38px;
+        font-weight: 500;
+        color: var(--color-foreground);
+    }
+}

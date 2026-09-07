@@ -3,12 +3,16 @@ import { Card, Group, Loader } from "@mantine/core"
 import { capitalize, intToCurrency } from "../../../util/util"
 import { getBalance } from "../bankService"
 import { useEffect, useState } from "react"
+import type { AccountType } from "../types"
 
 type AccountBalanceProps = {
-    accountType: "checking" | "savings" | "broken"
+    accountType: AccountType,
+    selected: boolean,
+    showBalanceText: boolean,
+    onClick: (account: AccountType) => void
 }
 
-function AccountBalance({ accountType }: AccountBalanceProps) {
+export default function AccountBalance({ accountType, selected, showBalanceText = true, onClick }: AccountBalanceProps) {
     const [balance, setBalance] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -32,7 +36,7 @@ function AccountBalance({ accountType }: AccountBalanceProps) {
     // Default content to loaded state
     let cardContent = (
         <>
-            <div className="label">{capitalize(accountType)} Balance</div>
+            <div className="label">{capitalize(accountType)}{showBalanceText ? ' Balance' : ''}</div>
             <div className={styles.balance}>{intToCurrency(balance)}</div>
         </>
     )
@@ -46,9 +50,10 @@ function AccountBalance({ accountType }: AccountBalanceProps) {
 
     return (
         <Card
-            className={styles.balanceCard}
+            className={`${styles.balanceCard} ${selected ? styles.selected : ''}`}
+            onClick={() => onClick(accountType)}
             withBorder
-            radius="md"
+            radius="lg"
             color="gray"
         >
             <Group
@@ -61,5 +66,3 @@ function AccountBalance({ accountType }: AccountBalanceProps) {
         </Card>
     )
 }
-
-export default AccountBalance;

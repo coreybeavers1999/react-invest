@@ -2,6 +2,7 @@ import './App.css'
 import { AppShell } from '@mantine/core'
 import { Outlet } from 'react-router'
 import AppSidebar from './layouts/Sidebar'
+import { PurchaseProvider } from './features/purchase/PurchaseProvider'
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Outlet />
+        <PurchaseProvider>
+          <Outlet />
+        </PurchaseProvider>
       </AppShell.Main>
 
     </AppShell>
